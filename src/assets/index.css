@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-radius-1: 0.25rem;
+  --border-radius-2: 0.5rem;
+  --primary-color: theme('colors.blue.700');
+  --accent-color: theme('colors.blue.800');
+  --secondary-color: theme('colors.orange.500');
+  --secondary-accent-color: theme('colors.orange.600');
+  --success-color: theme('colors.green.500');
+  --warning-color: theme('colors.yellow.500');
+  --error-color: theme('colors.red.700');
+}
