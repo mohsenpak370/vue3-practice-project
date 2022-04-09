@@ -17,7 +17,10 @@ const test = () => {
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +
       <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
     </h3>
-    <AtomsButton class="mt-4 mx-auto" mode="transparent" @click="test" >
+    <AtomsButton class="mt-4 mx-auto" mode="transparent" loading @click="test" >
+      <template #loading>
+        its' loading
+      </template>
       <p>Butt</p>
       <p class="">on</p>
     </AtomsButton>

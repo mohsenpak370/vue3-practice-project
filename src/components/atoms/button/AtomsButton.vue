@@ -56,7 +56,7 @@ const buttonStyle = computed(() => btnStyles[mode]);
     dir="auto"
     @click="onClick"
   >
-    <span v-if="loading">Loading...</span>
+    <slot v-if="loading" name="loading">Loading...</slot>
     <slot v-else />
   </button>
 </template>
