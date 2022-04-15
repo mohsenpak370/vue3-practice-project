@@ -1,32 +1,45 @@
-import AtomsButton from './AtomsButton.vue';
+import AtomsButton from "./AtomsButton.vue";
 
 export default {
   /* 👇 The title prop is optional.
-  * See https://storybook.js.org/docs/vue/configure/overview#configure-story-loading
-  * to learn how to generate automatic titles
-  */
-  title: 'AtomsButton',
+   * See https://storybook.js.org/docs/vue/configure/overview#configure-story-loading
+   * to learn how to generate automatic titles
+   */
+  title: "AtomsButton",
   component: AtomsButton,
   //👇 Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
 };
 
-export const Primary = () => ({
+const Template = (args) => ({
   components: { AtomsButton },
-  template: '<AtomsButton>Button Text</AtomsButton>',
+  setup() {
+    return { args };
+  },
+  template: '<AtomsButton v-bind="args" class="w-32">Button</AtomsButton>',
 });
 
-export const Secondary = () => ({
-  components: { AtomsButton },
-  template: '<AtomsButton mode="secondary" />',
-});
+export const Primary = Template.bind({});
+Primary.args = {
+  mode: "primary",
+  loading: false,
+  disabled: false,
+};
 
-export const Danger = () => ({
-  components: { AtomsButton },
-  template: '<AtomsButton mode="danger" />',
-});
+export const Secondary = Template.bind({});
+Secondary.args = {
+  ...Primary.args,
+  mode: "secondary",
+};
 
-export const Transparent = () => ({
-  components: { AtomsButton },
-  template: '<AtomsButton mode="transparent" />',
-});
+export const Danger = Template.bind({});
+Danger.args = {
+  ...Primary.args,
+  mode: "danger",
+};
+
+export const Transparent = Template.bind({});
+Transparent.args = {
+  ...Primary.args,
+  mode: "transparent",
+};
