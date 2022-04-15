@@ -57,9 +57,8 @@ const buttonStyle = computed(() => btnStyles[mode]);
     @click="onClick"
   >
     <slot v-if="loading" name="loading">Loading...</slot>
-    <slot v-else />
+    <slot v-else> Button </slot>
   </button>
 </template>
 
-<style src="./AtomsButton.css">
-</style>
+<style src="./AtomsButton.css"></style>
