@@ -1,0 +1,15 @@
+.small-checkbox {
+  @apply w-3 h-3;
+}
+.medium-checkbox {
+  @apply w-4 h-4;
+}
+.normal-checkbox {
+  @apply w-5 h-5;
+}
+.large-checkbox {
+  @apply w-6 h-6;
+}
+.extra-large-checkbox {
+  @apply w-8 h-8;
+}
