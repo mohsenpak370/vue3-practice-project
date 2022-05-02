@@ -1,29 +1,23 @@
 <script setup lang="ts">
-import AtomsButton from "./atoms/button/AtomsButton.vue";
-const props = defineProps<{
-  msg: string
-}>()
+import AtomsCheckbox from "./atoms/checkbox/AtomsCheckbox.vue";
+import { ref } from "vue"
 
-const test = () => {
-  window.alert(props.msg);
-}
+const check = ref(false);
+let checkboxes = ref(['test3'])
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
+    <h3 class="font-bold">
       You’ve successfully created a project with
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +
       <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
     </h3>
-    <AtomsButton class="mt-4 mx-auto" mode="transparent" loading @click="test" >
-      <template #loading>
-        its' loading
-      </template>
-      <p>Butt</p>
-      <p class="">on</p>
-    </AtomsButton>
+    <AtomsCheckbox v-model="checkboxes" class="mt-4 mx-4" label="test1" value="test" size="sm" />
+    <AtomsCheckbox v-model="checkboxes" class="mt-4 mx-4" label="test2" value="test2" size="md" />
+    <AtomsCheckbox v-model="check" class="mt-4 mx-4" label="test" />
+    <AtomsCheckbox v-model="checkboxes" class="mt-4 mx-4" label="test3" value="test3" size="lg" />
+    <AtomsCheckbox v-model="checkboxes" class="mt-4 mx-4" label="test4" value="test4" size="xl" />
   </div>
 </template>
 

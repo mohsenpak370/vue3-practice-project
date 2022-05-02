@@ -1,19 +1,26 @@
 <script setup lang="ts">
-import { computed } from "vue";
-interface Props {
+export interface BtnStyle {
+  primary: string;
+  secondary: string;
+  danger: string;
+  transparent: string;
+}
+export interface BtnProps {
   mode?: keyof BtnStyle;
   disabled?: boolean;
   loading?: boolean;
   stop?: boolean;
   prevent?: boolean;
 }
+
+import { computed } from "vue";
 const {
   mode = "primary",
   loading = false,
   stop = false,
   prevent = false,
   disabled = false,
-} = defineProps<Props>();
+} = defineProps<BtnProps>();
 
 const emit = defineEmits(["click"]);
 
@@ -30,12 +37,6 @@ const onClick = (event: Event) => {
   emit("click");
 };
 
-interface BtnStyle {
-  primary: string;
-  secondary: string;
-  danger: string;
-  transparent: string;
-}
 const btnStyles: BtnStyle = {
   primary: "primary-btn",
   secondary: "secondary-btn",
