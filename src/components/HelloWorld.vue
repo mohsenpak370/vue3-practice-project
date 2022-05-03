@@ -12,7 +12,9 @@ let radio = ref('test2');
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +
       <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
     </h3>
-    <AtomsRangeSlider />
+    <div class="h-24 flex items-center" >
+      <AtomsRangeSlider/>
+    </div>
   </div>
 </template>
 
