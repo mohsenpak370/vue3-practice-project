@@ -1,14 +1,14 @@
 <script setup lang="ts">
-export interface CheckboxSize {
+export interface RadioSize {
   sm: string;
   normal: string;
   lg: string;
 }
-export interface CheckboxProps {
-  modelValue: boolean | string[];
-  size?: keyof CheckboxSize;
+export interface RadioProps {
+  modelValue: string;
+  size?: keyof RadioSize;
   disabled?: boolean;
-  value?: string;
+  value: string;
   label?: string;
   fontWeight?: string;
 }
@@ -22,23 +22,23 @@ const {
   value,
   label,
   fontWeight = "normal",
-} = defineProps<CheckboxProps>();
+} = defineProps<RadioProps>();
 
-const vModelValue = computed<boolean | string[]>({
+const vModelValue = computed<string>({
   get() {
     return modelValue;
   },
-  set(value: boolean | string[]) {
+  set(value: string) {
     emit("update:modelValue", value);
   },
 });
 
-const checkboxSize: CheckboxSize = {
+const radioSize: RadioSize = {
   sm: "small-checkbox",
   normal: "normal-checkbox",
   lg: "large-checkbox",
 };
-const boxSize = computed(() => checkboxSize[size]);
+const buttonSize = computed(() => radioSize[size]);
 
 const emit = defineEmits(["update:modelValue"]);
 </script>
@@ -50,11 +50,11 @@ const emit = defineEmits(["update:modelValue"]);
   >
     <input
       v-model="vModelValue"
-      type="checkbox"
+      type="radio"
       :value="value"
       class="accent-th-primary"
       :class="{
-        [boxSize]: true,
+        [buttonSize]: true,
         'cursor-not-allowed': disabled,
         'cursor-pointer': !disabled,
       }"
@@ -64,4 +64,4 @@ const emit = defineEmits(["update:modelValue"]);
   </label>
 </template>
 
-<style src="./AtomsCheckbox.css"></style>
+<style src="./AtomsRadio.css"></style>
