@@ -1,8 +1,22 @@
 import AtomsCheckbox from "./AtomsCheckbox.vue";
-
+import { ref } from 'vue'
 export default {
   title: "AtomsCheckbox",
   component: AtomsCheckbox,
+  argTypes: {
+    size: {
+      options: ["sm", "normal", "lg"],
+      control: "select",
+    },
+    fontWeight: {
+      options: ["normal", "bold"],
+      control: "select",
+    },
+    value: {
+      options: [true, false],
+      control: "boolean",
+    }
+  }
 };
 
 const Template = (args) => ({
@@ -15,21 +29,21 @@ const Template = (args) => ({
 });
 
 export const Normal = Template.bind({});
-Primary.args = {
-  label: "Checkbox's Label",
+Normal.args = {
+  label: "Label's text",
   disabled: false,
   size: "normal",
 };
 
 export const Small = Template.bind({});
-Secondary.args = {
-  ...Primary.args,
+Small.args = {
+  ...Normal.args,
   size: "sm",
 };
 
 export const Large = Template.bind({});
-Danger.args = {
-  ...Primary.args,
+Large.args = {
+  ...Normal.args,
   size: "lg",
 };
 
