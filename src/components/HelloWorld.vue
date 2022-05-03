@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import AtomsCheckbox from "./atoms/checkbox/AtomsCheckbox.vue";
+import AtomsRadio from "./atoms/radio/AtomsRadio.vue";
 import { ref } from "vue"
 
-const check = ref(false);
-let checkboxes = ref(['test3'])
+let radio = ref('test2');
 </script>
 
 <template>
@@ -13,9 +12,9 @@ let checkboxes = ref(['test3'])
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +
       <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
     </h3>
-    <AtomsCheckbox v-model="checkboxes" class="mt-4 mx-4" label="test1" value="test" size="sm" />
-    <AtomsCheckbox v-model="check" class="mt-4 mx-4" label="test" />
-    <AtomsCheckbox v-model="checkboxes" class="mt-4 mx-4" label="test3" value="test3" size="lg" />
+    <AtomsRadio v-model="radio" class="mt-4 mx-4" label="test1" value="test1" size="sm" />
+    <AtomsRadio v-model="radio" class="mt-4 mx-4" value="test2" label="test2" disabled />
+    <AtomsRadio v-model="radio" class="mt-4 mx-4" label="test3" value="test3" size="lg" />
   </div>
 </template>
 
