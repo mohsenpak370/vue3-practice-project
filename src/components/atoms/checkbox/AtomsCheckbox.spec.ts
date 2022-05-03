@@ -16,5 +16,6 @@ describe("AtomsCheckbox", () => {
     const wrapper = mount(AtomsCheckbox, { props: { modelValue: false } });
     await wrapper.find("input").trigger("input");
     expect(wrapper.emitted()).toHaveProperty("input");
+    expect(wrapper.emitted().input).toHaveLength(1);
   })
 });

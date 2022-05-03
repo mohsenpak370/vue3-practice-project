@@ -1,10 +1,8 @@
 <script setup lang="ts">
 export interface CheckboxSize {
   sm: string;
-  md: string;
   normal: string;
   lg: string;
-  xl: string;
 }
 export interface CheckboxProps {
   modelValue: boolean | string[];
@@ -37,10 +35,8 @@ const vModelValue = computed<boolean | string[]>({
 
 const checkboxSize: CheckboxSize = {
   sm: "small-checkbox",
-  md: "medium-checkbox",
   normal: "normal-checkbox",
   lg: "large-checkbox",
-  xl: "extra-large-checkbox",
 };
 const boxSize = computed(() => checkboxSize[size]);
 

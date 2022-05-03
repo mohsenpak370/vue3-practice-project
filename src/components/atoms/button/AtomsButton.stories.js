@@ -7,6 +7,16 @@ export default {
    */
   title: "AtomsButton",
   component: AtomsButton,
+  argTypes: {
+    mode: {
+      options: ['primary', 'secondary', 'danger', 'transparent'],
+      control: 'select'
+    },
+    loading: {
+      options: [true, false],
+      control: 'boolean'
+    },
+  },
   //👇 Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
 };
