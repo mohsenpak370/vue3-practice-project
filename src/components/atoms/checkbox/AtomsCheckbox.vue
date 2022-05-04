@@ -24,6 +24,8 @@ const {
   fontWeight = "normal",
 } = defineProps<CheckboxProps>();
 
+const emit = defineEmits(["update:modelValue"]);
+
 const vModelValue = computed<boolean | string[]>({
   get() {
     return modelValue;
@@ -39,8 +41,6 @@ const checkboxSize: CheckboxSize = {
   lg: "large-checkbox",
 };
 const boxSize = computed(() => checkboxSize[size]);
-
-const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <template>
