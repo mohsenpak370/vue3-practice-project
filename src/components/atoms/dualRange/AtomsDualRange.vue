@@ -68,6 +68,7 @@ const sliderBackground = computed(() => {
       :min="min"
       :max="max"
       :step="step"
+      :disabled="disabled"
     />
     <input
       v-model="sliderMax"
@@ -75,6 +76,7 @@ const sliderBackground = computed(() => {
       :min="min"
       :max="max"
       :step="step"
+      :disabled="disabled"
     />
   </div>
 </template>

@@ -20,6 +20,7 @@ const maxValue = ref(4000000);
         min="0"
         max="10000000"
         step="1000000"
+        disabled
       />
     </div>
   </div>
