@@ -2,8 +2,8 @@
 import AtomsDualRange from "./atoms/dualRange/AtomsDualRange.vue";
 import { ref } from "vue";
 
-const minValue = ref(1000000);
-const maxValue = ref(4000000);
+const minValue = ref(13);
+const maxValue = ref(78);
 </script>
 
 <template>
@@ -17,9 +17,6 @@ const maxValue = ref(4000000);
       <AtomsDualRange
         v-model:minValue="minValue"
         v-model:maxValue="maxValue"
-        min="0"
-        max="10000000"
-        step="1000000"
       />
     </div>
   </div>
